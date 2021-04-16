@@ -14,8 +14,10 @@ public class Neuronio {
         for (int i = 0 ; i<entradas.size() ; i++){
             for (int j = 0 ; j<pesos.size() ; j++){
                 if(i == j){
-                    result = entradas.get(i) * entradas.get(j);
-                    System.out.println("Resultado Multiplicação" + result);
+                    result = entradas.get(i) * pesos.get(j);
+//                    System.out.println("Entrada posicao: " +i+ "Valor: " + entradas.get(i));
+//                    System.out.println("Entrada peso: " +j+ "Valor: " + entradas.get(j));
+                    System.out.println("Resultado Multiplicação Neuronio"+"("+(i+1)+"): " + result);
                     resultadoSoma += result;
                 }
             }

@@ -1,6 +1,7 @@
 package Main;
 
 import Gen.Neuronio;
+import Utils.Lista;
 import Utils.Matriz;
 
 import java.util.ArrayList;
@@ -16,14 +17,20 @@ public class Main {
 //        Matriz.sumMatriz(matrizA, matrizB);
 //        Matriz.multiplyMatriz(matrizA, matrizB);
 
-        Neuronio neuronio = new Neuronio();
-        List<Float>entradas = new ArrayList<>();
-        List<Float>pesos = new ArrayList<>();
-        entradas.add(3F);
-        entradas.add(3F);
-        pesos.add(3F);
-        pesos.add(3F);
 
+        Neuronio neuronio = new Neuronio();
+//        List<Float>entradas = new ArrayList<>();
+//        List<Float>pesos = new ArrayList<>();
+//        entradas.add(3F);
+//        entradas.add(3F);
+//        pesos.add(3F);
+//        pesos.add(3F);
+
+        List<Float>entradas =  Lista.pupoulaLista(2);
+        List<Float>pesos =  Lista.pupoulaLista(2);
+
+        System.out.println("Entrada " +entradas);
+        System.out.println("Pesos " +pesos);
 
         neuronio.soma(entradas, pesos);
 

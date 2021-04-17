@@ -13,15 +13,24 @@ public class Matriz {
         this.cols = cols;
         this.data = new float[rows][cols];
 
-        mapMatriz(data);
+        mapMatrizAleatorio(data);
 
     }
 
-    //Popula matriz
-    public void mapMatriz(float[][] matriz) {
+    //Popula matriz aleatorio
+    public void mapMatrizAleatorio(float[][] matriz) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 matriz[i][j] = (float) (Math.floor(Math.random() * 10));
+            }
+        }
+        printMatriz(matriz, rows, cols);
+    }
+
+    public void mapMatrizEstatica(float[][] matriz) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+//                matriz[i][j] =
             }
         }
         printMatriz(matriz, rows, cols);
@@ -41,16 +50,16 @@ public class Matriz {
         printMatriz(matrizResult, matrizA.rows, matrizB.cols);
     }
 
-    // Multiplica matriz Todo
+    // Multiplica matriz
     public static void multiplyMatriz(Matriz matrizA, Matriz matrizB) {
         float[][] matrizResult = new float[matrizA.data.length][matrizB.data[0].length];
 
         for (int rows = 0; rows < matrizA.data.length; rows++) {
             for (int cols = 0; cols < matrizB.data[0].length; cols++) {
                 float acum = 0;
-                for (int i = 0 ; i < matrizB.data.length ; i++){
-                        acum = acum + matrizA.data[rows][i] * matrizB.data[i][cols];
-                        matrizResult[rows][cols] = acum;
+                for (int i = 0; i < matrizB.data.length; i++) {
+                    acum = acum + matrizA.data[rows][i] * matrizB.data[i][cols];
+                    matrizResult[rows][cols] = acum;
                 }
 
             }
@@ -70,5 +79,28 @@ public class Matriz {
         }
     }
 
+    public static void printMatriz2(float[][] matriz) {
+        System.out.println(" ");
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+    }
+
+    public void randomizarMatriz(float[][] matriz) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matriz[i][j] = (float) (Math.floor(Math.random() * 10));
+            }
+        }
+        printMatriz(matriz, rows, cols);
+    }
+
+    //Getters e Setters
+    public float[][] getData() {
+        return data;
+    }
 
 }

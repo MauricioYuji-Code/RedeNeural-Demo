@@ -32,7 +32,7 @@ public class Main {
 //        neuronio.soma(entradas, pesos);
 
         Matriz input = new Matriz(2,1);
-        RedeNeural redeNeural = new RedeNeural(2,2,1, input);
+        RedeNeural redeNeural = new RedeNeural(3,5,1, input);
 
 //        float num[] = {1, 2};
 //        Matriz.arrayParaMatriz(num, 1);

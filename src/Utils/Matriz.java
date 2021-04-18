@@ -24,7 +24,17 @@ public class Matriz {
                 matriz[i][j] = (float) (Math.floor(Math.random() * 10));
             }
         }
+        data = matriz;
         printMatriz(matriz, rows, cols);
+    }
+
+    public void mapMatrizRandomica() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                data[i][j] = (float) (Math.floor(Math.random() * 10));
+            }
+        }
+//        printMatriz(data, rows, cols);
     }
 
     public void mapMatrizEstatica(float[][] matriz) {
@@ -51,7 +61,7 @@ public class Matriz {
     }
 
     // Multiplica matriz
-    public static void multiplyMatriz(Matriz matrizA, Matriz matrizB) {
+    public static float[][] multiplyMatriz(Matriz matrizA, Matriz matrizB) {
         float[][] matrizResult = new float[matrizA.data.length][matrizB.data[0].length];
 
         for (int rows = 0; rows < matrizA.data.length; rows++) {
@@ -65,6 +75,7 @@ public class Matriz {
             }
         }
         printMatriz(matrizResult, matrizA.data.length, matrizB.data[0].length);
+        return matrizResult;
     }
 
 
@@ -87,15 +98,6 @@ public class Matriz {
             }
             System.out.println(" ");
         }
-    }
-
-    public void randomizarMatriz(float[][] matriz) {
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                matriz[i][j] = (float) (Math.floor(Math.random() * 10));
-            }
-        }
-        printMatriz(matriz, rows, cols);
     }
 
     //Getters e Setters

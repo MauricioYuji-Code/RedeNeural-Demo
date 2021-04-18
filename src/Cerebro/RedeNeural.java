@@ -15,7 +15,7 @@ public class RedeNeural {
     Matriz peso;
     Matriz peso_oculta_saida;
 
-    public RedeNeural(int camada_entrada, int n_camada_oculta, int camada_saida, Matriz input){
+    public RedeNeural(int camada_entrada, int n_camada_oculta, int camada_saida, Matriz input) {
         this.camada_entrada = camada_entrada;
         this.n_camda_oculta = n_camada_oculta;
         this.camada_saida = camada_saida;
@@ -34,12 +34,11 @@ public class RedeNeural {
 
     }
 
-    public void feedFoward(Matriz input){
+    public void feedFoward(Matriz input) {
 
-        float[][]resultadoEntradaPeso =  Matriz.multiplyMatriz(peso, input);
-        //Todo
+        float[][] resultadoEntradaPeso = Matriz.multiplyMatriz(peso, input);
+        //Todo TRANSFORMAR A MATRIZ ACIMA EM UM OBJETO DO TIPO MATRIZ EX: Matriz resultadoEntradaPeso = new Matriz();
 //        float[][]resultadoEPBias = Matriz.sumMatriz( ,bias_entrada);
-
 
 
     }

@@ -15,7 +15,7 @@ public class Main {
 
         int valorDesejado = -1;
 
-        float novoPeso;
+        float[][] novoPeso;
 
 
         Matriz entrada1 = new Matriz(entrada);
@@ -38,6 +38,8 @@ public class Main {
             System.out.println("Precisa de ajuste");
             Matriz.printMatriz2(peso);
             RedeNeural.recauculoPesos(entrada, peso1, valorDesejado, resultadoDegrau);
+            //Todo recursividade
+            //function(peso novo, ajuste?)
         }
 
     }

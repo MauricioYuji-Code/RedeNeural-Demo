@@ -6,21 +6,39 @@ import Utils.Matriz;
 public class Main {
 
     public static void main(String[] args) {
+        //1x3
+        float[][] entrada = {{0.6f, 0.9f, 0.8f}};
+        //3x1
+        float[][] peso = {{0.1f}, {0.2f}, {0.3f}};
 
-//        float [][] entrada = {{(float)0.1}, {(float)0.4}, {(float)0,4}};
-//
-//        Matriz input = new Matriz(2,1);
-//
-//        RedeNeural redeNeural = new RedeNeural(3,5,1, input);
+        float[][] bias = {{0.1f}};
 
-        float [][] teste = {{1,2}, {2,2}};
-        float [][] teste1 = {{3,2}, {4,2}};
+        int valorDesejado = -1;
 
-        Matriz mt1 = new Matriz(teste);
-        Matriz mt2 = new Matriz(teste1);
+        float novoPeso;
 
-        Matriz.sumMatriz(mt1, mt2);
-        Matriz.multiplyMatriz(mt1, mt2);
+
+        Matriz entrada1 = new Matriz(entrada);
+        Matriz peso1 = new Matriz(peso);
+        Matriz bias1 = new Matriz(bias);
+
+        //3x1 * 1X3 = 1X1
+        float[][] resultado = Matriz.multiplyMatriz(entrada1, peso1);
+
+        Matriz resultadoEntradasPesos = new Matriz(resultado);
+
+        float[][] resultado2 = Matriz.sumMatriz(resultadoEntradasPesos, bias1);
+
+        int resultadoDegrau = RedeNeural.funcaoDegral(resultado2[0][0]);
+
+        if (resultadoDegrau == valorDesejado) {
+            System.out.println("Sucesso!");
+            Matriz.printMatriz2(peso);
+        } else {
+            System.out.println("Precisa de ajuste");
+            Matriz.printMatriz2(peso);
+            RedeNeural.recauculoPesos(entrada, peso1, valorDesejado, resultadoDegrau);
+        }
 
     }
 

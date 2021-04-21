@@ -51,24 +51,26 @@ public class Matriz {
     }
 
     //Soma Matriz
-    public static void sumMatriz(Matriz matrizA, Matriz matrizB) {
+    public static float[][] sumMatriz(Matriz matrizA, Matriz matrizB) {
 
         float[][] matrizResult = new float[matrizA.data.length][matrizB.data[0].length];
-        System.out.println(matrizA.data.length + "tamanho da matriz");
-        System.out.println(matrizB.data[0].length + "tamanho da matriz");
+//        System.out.println(matrizA.data.length + "tamanho da matriz");
+//        System.out.println(matrizB.data[0].length + "tamanho da matriz");
+
         for (int i = 0; i < matrizA.data.length; i++) {
             for (int j = 0; j < matrizA.data[0].length; j++) {
                 matrizResult[i][j] = matrizA.data[i][j] + matrizB.data[i][j];
-                System.out.println(matrizResult[i][j]);
+//                System.out.println(matrizResult[i][j]);
             }
         }
-//        printMatriz(matrizResult, matrizA.rows, matrizB.cols);
+        System.out.print("Resultado matriz soma: ");
+        printMatriz(matrizResult, matrizA.data.length, matrizB.data[0].length);
+        return matrizResult;
     }
 
     // Multiplica matriz
     public static float[][] multiplyMatriz(Matriz matrizA, Matriz matrizB) {
         float[][] matrizResult = new float[matrizA.data.length][matrizB.data[0].length];
-
         for (int rows = 0; rows < matrizA.data.length; rows++) {
             for (int cols = 0; cols < matrizB.data[0].length; cols++) {
                 float acum = 0;
@@ -79,6 +81,7 @@ public class Matriz {
 
             }
         }
+        System.out.print("Resultado matriz multiplicação: ");
         printMatriz(matrizResult, matrizA.data.length, matrizB.data[0].length);
         return matrizResult;
     }

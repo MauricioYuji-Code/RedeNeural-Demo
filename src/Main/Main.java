@@ -7,38 +7,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        Matriz matrizA = new Matriz(2, 2);
-//        Matriz matrizB = new Matriz(2, 2);
+//        float [][] entrada = {{(float)0.1}, {(float)0.4}, {(float)0,4}};
 //
-//        Matriz.sumMatriz(matrizA, matrizB);
-//        Matriz.multiplyMatriz(matrizA, matrizB);
+//        Matriz input = new Matriz(2,1);
+//
+//        RedeNeural redeNeural = new RedeNeural(3,5,1, input);
 
-//
-//        Neuronio neuronio = new Neuronio();
-//        Neuronio neuronio2 = new Neuronio();
-//        List<Float>entradas = new ArrayList<>();
-//        List<Float>pesos = new ArrayList<>();
-//        entradas.add(3F);
-//        entradas.add(3F);
-//        pesos.add(0.2F);
-//        pesos.add(0.02F);
-//
-//        List<Float>entradas =  Lista.pupoulaLista(10);
-//        List<Float>pesos =  Lista.pupoulaLista(10);
-//
-//        System.out.println("Entrada " +entradas);
-//        System.out.println("Pesos " +pesos);
-//
-//        neuronio.soma(entradas, pesos);
+        float [][] teste = {{1,2}, {2,2}};
+        float [][] teste1 = {{3,2}, {4,2}};
 
-        Matriz input = new Matriz(2,1);
-        RedeNeural redeNeural = new RedeNeural(3,5,1, input);
+        Matriz mt1 = new Matriz(teste);
+        Matriz mt2 = new Matriz(teste1);
 
-//        float num[] = {1, 2};
-//        Matriz.arrayParaMatriz(num, 1);
-
-        float[][] num={ {1}, {2} };
-//        Matriz.printMatriz2(num);
+        Matriz.sumMatriz(mt1, mt2);
+        Matriz.multiplyMatriz(mt1, mt2);
 
     }
 

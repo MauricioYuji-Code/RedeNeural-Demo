@@ -17,6 +17,10 @@ public class Matriz {
 
     }
 
+    public Matriz(float[][] matriz) {
+        this.data = matriz;
+    }
+
     //Popula matriz aleatorio
     public void mapMatrizAleatorio(float[][] matriz) {
         for (int i = 0; i < rows; i++) {
@@ -49,15 +53,16 @@ public class Matriz {
     //Soma Matriz
     public static void sumMatriz(Matriz matrizA, Matriz matrizB) {
 
-        float[][] matrizResult = new float[matrizA.rows][matrizB.cols];
-//        System.out.println(matrizA.data.length + "tamanho da matriz");
-//        System.out.println(matrizB.data[0].length + "tamanho da matriz");
+        float[][] matrizResult = new float[matrizA.data.length][matrizB.data[0].length];
+        System.out.println(matrizA.data.length + "tamanho da matriz");
+        System.out.println(matrizB.data[0].length + "tamanho da matriz");
         for (int i = 0; i < matrizA.data.length; i++) {
-            for (int j = 0; j < matrizA.data.length; j++) {
+            for (int j = 0; j < matrizA.data[0].length; j++) {
                 matrizResult[i][j] = matrizA.data[i][j] + matrizB.data[i][j];
+                System.out.println(matrizResult[i][j]);
             }
         }
-        printMatriz(matrizResult, matrizA.rows, matrizB.cols);
+//        printMatriz(matrizResult, matrizA.rows, matrizB.cols);
     }
 
     // Multiplica matriz
